@@ -31,12 +31,32 @@ We train the overall framework in a semisupervised setting, where datasets only 
 2. Extract Image Patches from WSIs (no-overlapping) `./preprocess/extract_patches.py`.
 
 ### Training
-Set up the file pathes of labeled, unlabeled training data and valid data in line 78-80 of `multitask_train.py`.
-For example: 
-`labeled_data_files = "./data/RCC/labeled_2000_train.txt"`
-`unlabeled_files = "./data/RCC/unlabeled_2000_train.txt"`
-`test_files =  "./data/RCC/all_2000_test.txt"`
-Run `python multitask_train.py --gpus 0,1 --epoches 200 --batch-size 128 --n-classes1 2 --n-classes2 3 --out your_path_to_save`.
+1. Set up the file pathes of labeled, unlabeled training data and valid data in line 78-80 of `multitask_train.py`.
+
+    For example:
+
+    `labeled_data_files = "./data/RCC/labeled_2000_train.txt"`
+
+    `unlabeled_files = "./data/RCC/unlabeled_2000_train.txt"`
+    
+    `test_files =  "./data/RCC/all_2000_test.txt"`
+
+2. Run `python multitask_train.py --gpus 0,1 --epoches 200 --batch-size 128 --n-classes1 2 --n-classes2 3 --out your_path_to_save`.
+
+#### Note that, `n-classes1` and `n-classes2` represent the number of classes for CRD and subtyping classifier, respectively.
+
+### Prediction
+1. Set up the pathes of test data, model and results (you want to save).
+
+    For example:
+    
+    test_files = "./data/RCC/all_2000_test.txt"
+    
+    file_path_base = "./path_to_model/model_best.pth.tar"
+    
+    results_file = "./data/results.csv"
+
+2. Run `python valid.py`
 
 ## Citation
 
