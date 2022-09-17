@@ -31,7 +31,7 @@ We train the overall framework in a semisupervised setting, where datasets only 
 2. Extract Image Patches from WSIs (no-overlapping) `./preprocess/extract_patches.py`.
 
 ### Training
-1. Set up the file pathes of labeled, unlabeled training data and valid data in line 78-80 of `multitask_train.py`.
+1. Set up pathes of labeled, unlabeled training data and valid data in line 78-80 of `multitask_train.py`.
 
     For example:
 
@@ -46,7 +46,7 @@ We train the overall framework in a semisupervised setting, where datasets only 
 #### Note that, `n-classes1` and `n-classes2` represent the number of classes for CRD and subtyping classifier, respectively.
 
 ### Prediction
-1. Set up the pathes of test data, model and results (you want to save).
+1. Set up pathes of test data, model and results (you want to save).
 
     For example:
     
