@@ -22,12 +22,21 @@ We train the overall framework in a semisupervised setting, where datasets only 
 - progress 1.5
 
 ## Dataset
+- Download the TCGA datasets, including renal, lung and breast from [this link](https://dataset.chenli.group/)
 
 ## Usage
 
 ### Pre-processing
+1. Generate Binary Mask for WSIs `./preprocess/back_ground_filter.py`.
+2. Extract Image Patches from WSIs (no-overlapping) `./preprocess/extract_patches.py`.
 
 ### Training
+Set up the file pathes of labeled, unlabeled training data and valid data in line 78-80 of `multitask_train.py`.
+For example: 
+`labeled_data_files = "./data/RCC/labeled_2000_train.txt"`
+`unlabeled_files = "./data/RCC/unlabeled_2000_train.txt"`
+`test_files =  "./data/RCC/all_2000_test.txt"`
+Run `python multitask_train.py --gpus 0,1 --epoches 200 --batch-size 128 --n-classes1 2 --n-classes2 3 --out your_path_to_save`.
 
 ## Citation
 
