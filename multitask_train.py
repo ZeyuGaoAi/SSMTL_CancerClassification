@@ -56,6 +56,8 @@ parser.add_argument('--mu-u', default=1, type=float)
 parser.add_argument('--s-start-epochs', default=5, type=float)
 parser.add_argument('--T', default=0.5, type=float)
 parser.add_argument('--ema-decay', default=0.999, type=float)
+parser.add_argument('--n-classes1', default=2, type=int)
+parser.add_argument('--n-classes2', default=3, type=int)
 
 
 args = parser.parse_args()
@@ -71,8 +73,11 @@ if args.manualSeed is None:
 np.random.seed(args.manualSeed)
 
 best_acc = 0  # best test accuracy
-num_classes_1 = 2 # cancer vs normal
-num_classes_2 = 3 # ccrcc vs prcc vs chrcc
+num_classes_1 = args.n_classes1 # cancer vs normal
+num_classes_2 = args.n_classes2 # ccrcc vs prcc vs chrcc
+labeled_data_files = "./data/RCC/labeled_2000_train.txt"
+unlabeled_files = "./data/RCC/unlabeled_2000_train.txt"
+test_files =  "./data/RCC/all_2000_test.txt"
 
 def main():
     global best_acc
@@ -82,9 +87,6 @@ def main():
 
     # Data
     print(f'==> Preparing dataset')
-    labeled_data_files = "./data/RCC/labeled_2000_train.txt"
-    unlabeled_files = "./data/RCC/unlabeled_2000_train.txt"
-    test_files =  "./data/RCC/all_2000_test.txt"
     print(labeled_data_files)
     print(unlabeled_files)
     print(test_files)
