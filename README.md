@@ -58,6 +58,8 @@ We train the overall framework in a semisupervised setting, where datasets only 
 
 2. Run `python valid.py`
 
+### Evaluation
+
 ## Citation
 
 If any part of this code is used, please give appropriate citation to our paper.
