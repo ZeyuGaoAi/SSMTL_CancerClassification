@@ -59,6 +59,7 @@ We train the overall framework in a semisupervised setting, where datasets only 
 2. Run `python valid.py`
 
 ### Evaluation
+Use the corresponding jupyter notebooks (`Evaluation_SSMTL_CRD.ipynb` and `Evaluation_SSMTL_Subtyping.ipynb`) to evaluation the cancer region detection and subtyping tasks, respectively.
 
 ## Citation
 
