@@ -22,7 +22,7 @@ We train the overall framework in a semisupervised setting, where datasets only 
 - progress 1.5
 
 ## Dataset
-- Download the TCGA datasets, including renal, lung and breast from [this link](https://dataset.chenli.group/)
+- Download the TCGA datasets, including renal, lung and breast from [this link](https://dataset.chenli.group/home/rcc-region-and-subtyping)
 
 ## Usage
 
