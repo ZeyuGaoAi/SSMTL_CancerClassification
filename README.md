@@ -41,7 +41,7 @@ We train the overall framework in a semisupervised setting, where datasets only 
     
     `test_files =  "./data/RCC/all_2000_test.txt"`
 
-2. Run `python multitask_train.py --gpus 0,1 --epoches 200 --batch-size 128 --n-classes1 2 --n-classes2 3 --out your_path_to_save`.
+2. Run `python multitask_train.py --gpu 0,1 --epochs 200 --batch-size 128 --n-classes1 2 --n-classes2 3 --out your_path_to_save`.
 
 #### Note that, `n-classes1` and `n-classes2` represent the number of classes for CRD and subtyping classifier, respectively.
 
